@@ -11,37 +11,43 @@ import org.junit.Test;
  */
 
 public class Sandbox {
-  @Before
-  public void setUp() throws Exception {
-  }
+    @Before
+    public void setUp() throws Exception {
+    }
 
-  /**
-   * 数字のアサーションに挑戦してみましょう！
-   * <p>
-   * 1) 1 + 1 = 2
-   * 2) 123 > 100
-   * <p>
-   * これらを検証するようなテストケースを自由に書いてみてください。
-   * <p>
-   * ヒント: <code>Assertions#assertThat( テスト対象 ).isEqualTo( 期待値 )</code> のように書きます。
-   * ヒント: <code>isGreaterThan</code> や <code>isLessThan</code> など、数字に関する様々なアサーションを試してみましょう。
-   */
-  @Test
-  public void simple_assertion_for_numbers() throws Exception {
-  }
+    /**
+     * 数字のアサーションに挑戦してみましょう！
+     * <p>
+     * 1) 1 + 1 = 2
+     * 2) 123 > 100
+     * <p>
+     * これらを検証するようなテストケースを自由に書いてみてください。
+     * <p>
+     * ヒント: <code>Assertions#assertThat( テスト対象 ).isEqualTo( 期待値 )</code> のように書きます。
+     * ヒント: <code>isGreaterThan</code> や <code>isLessThan</code> など、数字に関する様々なアサーションを試してみましょう。
+     */
+    @Test
+    public void simple_assertion_for_numbers() throws Exception {
+        Assertions.assertThat(1 + 1).isEqualTo(2);
+        Assertions.assertThat(100).isGreaterThan(99);
+        Assertions.assertThat(100).isLessThan(101);
+    }
 
-  /**
-   * 文字列のアサーションに挑戦してみましょう！
-   * <p>
-   * 1) "Alice" は "Bob" ではない
-   * 2) "Alice" は "Al" から始まる
-   * 3) "Alice" は大文字小文字を区別しなければ "alice" と同じ
-   * <p>
-   * これらを検証するようなテストケースを自由に書いてみてください。
-   * <p>
-   * ヒント: <code>isNotEmpty</code> や <code>startsWith</code> など、文字列に関する様々なアサーションを試してみましょう。
-   */
-  @Test
-  public void simple_assertion_for_strings() throws Exception {
-  }
+    /**
+     * 文字列のアサーションに挑戦してみましょう！
+     * <p>
+     * 1) "Alice" は "Bob" ではない
+     * 2) "Alice" は "Al" から始まる
+     * 3) "Alice" は大文字小文字を区別しなければ "alice" と同じ
+     * <p>
+     * これらを検証するようなテストケースを自由に書いてみてください。
+     * <p>
+     * ヒント: <code>isNotEmpty</code> や <code>startsWith</code> など、文字列に関する様々なアサーションを試してみましょう。
+     */
+    @Test
+    public void simple_assertion_for_strings() throws Exception {
+        Assertions.assertThat("Alice").isNotEqualTo("Bob");
+        Assertions.assertThat("Alice").startsWith("Al");
+        Assertions.assertThat("Alice").isEqualToIgnoringCase("alice");
+    }
 }
